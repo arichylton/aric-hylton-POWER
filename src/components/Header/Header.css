@@ -1,0 +1,16 @@
+.header-background {
+    background-color: rgba(236, 236, 236, 0.5);
+    box-shadow: 0 1px 1px rgb(212, 212, 212);
+}
+
+a > img {
+    margin-right: 10px;
+}
+
+.grow {
+    transition: transform 0.25s all;
+}
+
+.grow:hover {
+    transform: scale(1.2);
+}
