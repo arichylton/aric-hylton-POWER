@@ -1,6 +1,10 @@
 .header-background {
-    background-color: rgba(236, 236, 236, 0.5);
-    box-shadow: 0 1px 1px rgb(212, 212, 212);
+    background-color: rgba(49, 53, 77, 0.137);
+    box-shadow: 0 1px 1px rgba(49, 53, 77, 0.5);
+}
+
+a > span {
+    color: white;
 }
 
 a > img {
@@ -12,5 +16,9 @@ a > img {
 }
 
 .grow:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
+}
+
+.navbar {
+    padding: .2rem 1rem;
 }
