@@ -8,7 +8,7 @@ class Header extends React.Component {
 		return (
 			<div className="header-background fixed-top">
 				<nav className="navbar navbar-light">
-					<a className="navbar-brand grow " href="/#">
+					<a className="navbar-brand" href="/#">
 						<img src={dumbell} width="30" height="30" className="d-inline-block align-center" alt="" />
 						<span className="v-mid">POWER</span>
 					</a>

@@ -44,10 +44,8 @@ class Home extends React.Component {
 		return (
 			<div className="jumbotron jumbotron-fluid">
 				<div className="container centered">
-					<h1 className="display-4">POWER</h1>
-					<p className="lead animated fadeIn">
-						Got Wilks?
-					</p>
+					<h1 className="display-4 animated pulse infinite">POWER</h1>
+					<p className="lead animated fadeIn">Got Wilks?</p>
 				</div>
 			</div>
 		);
@@ -57,7 +55,10 @@ class Home extends React.Component {
 		return (
 			<div>
 				{this.renderCover()}
-				<h2 className="centered">Guide</h2>
+				<div className="centered">
+					<h2>Guide</h2>
+				</div>
+
 				{this.renderItemsList()}
 			</div>
 		);
