@@ -6,17 +6,25 @@
 a > span {
     color: white;
     letter-spacing: 1px;
-    padding-bottom: 4px;
+    padding-bottom: 10px;
+    transition: color .2s;
 }
 
 a > span:hover {
-    border-bottom: 1px solid rgba(255, 183, 75, 0.966);
+    color: rgba(255, 183, 75, 0.966);
 }
 
 a > img {
     margin-right: 10px;
 }
 
-.navbar {
-    padding: .3rem 1rem;
+.nav-container {
+    margin: 0 auto;
+    max-width: 1800px;
 }
+
+.navbar {
+    padding: .5% 3%;
+}
+
+

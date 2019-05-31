@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Home from './Home/Home';
 import Header from './Header/Header';
+import Wilks from './Wilks/Wilks';
 import './App.css';
 
 class App extends React.Component {
@@ -13,6 +14,7 @@ class App extends React.Component {
 					<Header />
 					<Switch>
 						<Route path="/" exact component={Home} />
+						<Route path="/wilks" exact component={Wilks} />
 					</Switch>
 				</div>
 			</Router>

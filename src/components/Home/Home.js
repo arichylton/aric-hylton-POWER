@@ -42,9 +42,9 @@ class Home extends React.Component {
 
 	renderCover() {
 		return (
-			<div className="jumbotron jumbotron-fluid">
+			<div className="jumbotron jumbotron-fluid home">
 				<div className="container centered">
-					<h1 className="display-4 animated pulse infinite">POWER</h1>
+					<h1 className="display-4 animated pulse infinite header-home">POWER</h1>
 					<p className="lead animated fadeIn">Got Wilks?</p>
 				</div>
 			</div>
