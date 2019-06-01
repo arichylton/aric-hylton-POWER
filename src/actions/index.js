@@ -16,3 +16,10 @@ export const signOut = () => {
         payload: user
     }
  }
+
+ export const getWilks = (wilks) => {
+    return {
+        type: 'GET_WILKS',
+        payload: wilks
+    }
+ }

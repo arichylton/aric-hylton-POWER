@@ -1,5 +1,7 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
+import { getWilks } from '../../actions/index';
 import './Wilks.css';
 
 class Wilks extends React.Component {
@@ -65,7 +67,35 @@ class Wilks extends React.Component {
 						-9.054e-8 * (weight / 2.205) ** 5));
 			this.setState({ wilks: num.toFixed(2) });
 		}
+		
 	};
+
+	onSubmitGetWilks = () => {
+		fetch('http://localhost:3000/wilks', {
+			method: 'post',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify({
+				weight: this.state.weight,
+				total: this.state.total,
+				wilks: this.state.wilks,
+				type: this.state.type,
+				id: this.props.user.id
+			})
+		})
+			.then((response) => response.json())
+			.then((data) => {
+				this.props.getWilks(data);
+			})
+			.catch(err => console.log(err));
+	};
+
+	onSubmitGetWilksAndCalcWilks = async () => {
+
+		await this.calcWilks();
+		if (this.props.user.id) {
+			this.onSubmitGetWilks();
+		}
+	}
 
 	renderWilksJumbo() {
 		return (
@@ -147,7 +177,7 @@ class Wilks extends React.Component {
 									kgs
 								</button>
 							</div>
-							<button type="button" className="btn btn-primary" onClick={this.calcWilks}>
+							<button type="button" className="btn btn-primary" onClick={this.onSubmitGetWilksAndCalcWilks}>
 								Submit
 							</button>
 						</div>
@@ -159,6 +189,26 @@ class Wilks extends React.Component {
 				</div>
 			</form>
 		);
+	}
+
+	renderWilksDataList() {
+		return this.props.wilksData.map(stream => {
+			return (
+				<div className='item' key={stream.date}>
+					Hello
+				</div>
+			)
+		})
+	}
+
+	renderWilksData() {
+		if (this.props.user.id) {
+			return (
+				<div className="wilks-data">
+					{this.renderWilksDataList()}
+				</div>
+			)
+		}	
 	}
 
 	renderWilksChart() {
@@ -300,6 +350,7 @@ class Wilks extends React.Component {
 			<div>
 				<div>{this.renderWilksJumbo()}</div>
 				<div className="wilks-section">{this.renderWilksCalc()}</div>
+				<div>{this.renderWilksData()}</div>
 				<div className="wilks-chart">
 					<h1>Wilks Comparison Chart</h1>
 					{this.renderWilksInformation()}
@@ -310,4 +361,8 @@ class Wilks extends React.Component {
 	}
 }
 
-export default Wilks;
+const mapStateToProps = state => {
+	return { user: state.user, wilksData: Object.values(state.wilksData) }
+}
+
+export default connect(mapStateToProps, { getWilks })(Wilks);

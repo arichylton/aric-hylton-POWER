@@ -18,6 +18,10 @@
 	justify-content: space-evenly;
 }
 
+.wilks-data{
+	height: 50vh;
+}
+
 .wilks-chart {
 	display: flex;
 	flex-direction: column;

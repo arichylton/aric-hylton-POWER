@@ -36,7 +36,7 @@ class Signin extends React.Component {
 			.then((response) => response.json())
 			.then((user) => {
 				this.props.getUser(user);
-			});
+		});
 	};
 
 	render() {
