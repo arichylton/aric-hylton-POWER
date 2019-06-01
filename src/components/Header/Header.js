@@ -1,10 +1,33 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
+import { signOut } from '../../actions/index';
 import './Header.css';
 import dumbell from '../../pics/dumbell.png';
 
 class Header extends React.Component {
+	renderIsSignedIn() {
+		if (!this.props.isSignedIn) {
+			return (
+				<div>
+					<Link to="/signin" className="navbar-brand">
+						<span className="v-mid m-4">Sign-In</span>
+					</Link>
+					<a className="navbar-brand" href="/#">
+						<span className="v-mid">Register</span>
+					</a>
+				</div>
+			);
+		} else {
+			return (
+				<Link to="/" className="navbar-brand" onClick={() => this.props.signOut()}>
+					<span className="v-mid m-4">Sign-Out</span>
+				</Link>
+			)
+		}
+	}
+
 	render() {
 		return (
 			<div className="header-background fixed-top">
@@ -22,18 +45,15 @@ class Header extends React.Component {
 						</Link>
 					</div>
 
-					<div>
-						<a className="navbar-brand" href="/#">
-							<span className="v-mid m-4">Sign-In</span>
-						</a>
-						<a className="navbar-brand" href="/#">
-							<span className="v-mid">Register</span>
-						</a>
-					</div>
+					{this.renderIsSignedIn()}
 				</nav>
 			</div>
 		);
 	}
 }
 
-export default Header;
+const mapStateToProps = (state) => {
+	return { isSignedIn: state.signin.isSignedIn };
+};
+
+export default connect(mapStateToProps)(Header);

@@ -1,0 +1,7 @@
+.signin {
+    height: 100vh;
+    background-image: linear-gradient(to bottom, rgb(45, 49, 68), rgba(60, 48, 126, 0.905));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

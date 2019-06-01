@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import './Home.css';
 import workout from '../../pics/workout.png';
@@ -51,12 +52,22 @@ class Home extends React.Component {
 		);
 	}
 
+	renderTips() {
+		if (this.props.user.name) {
+			return (
+				<h2>{this.props.user.name}'s Tips</h2>
+			)		
+		} else {
+			return <h2>Tips</h2>
+		}
+	}
+
 	render() {
 		return (
 			<div>
 				{this.renderCover()}
 				<div className="centered">
-					<h2>Guide</h2>
+					{this.renderTips()}
 				</div>
 
 				{this.renderItemsList()}
@@ -65,4 +76,8 @@ class Home extends React.Component {
 	}
 }
 
-export default Home;
+const mapStateToProps = state => {
+	return { user: state.user }
+}
+
+export default connect(mapStateToProps)(Home);
