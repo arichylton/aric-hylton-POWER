@@ -13,8 +13,12 @@ class Wilks extends React.Component {
 			total: 0,
 			wilks: 0,
 			gender: '',
-			type: 'lbs'
+			type: 'lbs',
+			wilksData: []
 		};
+	}
+
+	componentDidMount() {
 	}
 
 	calcWilks = () => {
@@ -67,7 +71,6 @@ class Wilks extends React.Component {
 						-9.054e-8 * (weight / 2.205) ** 5));
 			this.setState({ wilks: num.toFixed(2) });
 		}
-		
 	};
 
 	onSubmitGetWilks = () => {
@@ -86,16 +89,15 @@ class Wilks extends React.Component {
 			.then((data) => {
 				this.props.getWilks(data);
 			})
-			.catch(err => console.log(err));
+			.catch((err) => console.log(err));
 	};
 
 	onSubmitGetWilksAndCalcWilks = async () => {
-
 		await this.calcWilks();
-		if (this.props.user.id) {
+		if (this.props.user.id && this.state.gender !== '') {
 			this.onSubmitGetWilks();
 		}
-	}
+	};
 
 	renderWilksJumbo() {
 		return (
@@ -177,7 +179,11 @@ class Wilks extends React.Component {
 									kgs
 								</button>
 							</div>
-							<button type="button" className="btn btn-primary" onClick={this.onSubmitGetWilksAndCalcWilks}>
+							<button
+								type="button"
+								className="btn btn-primary"
+								onClick={this.onSubmitGetWilksAndCalcWilks}
+							>
 								Submit
 							</button>
 						</div>
@@ -192,23 +198,55 @@ class Wilks extends React.Component {
 	}
 
 	renderWilksDataList() {
-		return this.props.wilksData.map(stream => {
-			return (
-				<div className='item' key={stream.date}>
-					Hello
-				</div>
-			)
-		})
+
+		if (!this.props.wilksData[0]) {
+			return this.props.user.wilks.map((wilks) => {
+				return (
+					<div className="list-group-item" key={wilks.date}>
+						<h3>
+						{' '}
+						<span style={{ color: '#228B22' }}>{Number(wilks.total).toFixed(0)}</span>
+						{wilks.type} total @<span style={{ color: '#FF6347' }}>
+							{Number(wilks.weight).toFixed(1)}
+						</span>
+						{wilks.type} bodyweight = <span style={{ color: '#1E90FF' }}>{wilks.wilks}</span>
+					</h3>
+					</div>
+				);
+			});
+		} else {
+			return this.props.wilksData.map((wilks) => {
+				return (
+					<div className="list-group-item" key={wilks.date}>
+						<h3>
+						{' '}
+						<span style={{ color: '#228B22' }}>{Number(wilks.total).toFixed(0)}</span>
+						{wilks.type} total @<span style={{ color: '#FF6347' }}>
+							{Number(wilks.weight).toFixed(1)}
+						</span>
+						{wilks.type} bodyweight = <span style={{ color: '#1E90FF' }}>{wilks.wilks}</span>
+					</h3>
+					</div>
+				);
+			});
+		}
+		
 	}
 
 	renderWilksData() {
-		if (this.props.user.id) {
+		const { name, wilks } = this.props.user;
+		
+
+		if (this.props.user.wilks) {
 			return (
 				<div className="wilks-data">
-					{this.renderWilksDataList()}
+					<h1>{this.props.user.name}'s Data</h1>
+					<div className="list-group list-group-flush">
+						{this.renderWilksDataList()}
+					</div>
 				</div>
-			)
-		}	
+			);
+		}
 	}
 
 	renderWilksChart() {
@@ -361,8 +399,8 @@ class Wilks extends React.Component {
 	}
 }
 
-const mapStateToProps = state => {
-	return { user: state.user, wilksData: Object.values(state.wilksData) }
-}
+const mapStateToProps = (state) => {
+	return { user: state.user, wilksData: Object.values(state.wilksData) };
+};
 
 export default connect(mapStateToProps, { getWilks })(Wilks);

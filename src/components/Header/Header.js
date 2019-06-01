@@ -56,4 +56,4 @@ const mapStateToProps = (state) => {
 	return { isSignedIn: state.signin.isSignedIn };
 };
 
-export default connect(mapStateToProps)(Header);
+export default connect(mapStateToProps, { signOut })(Header);

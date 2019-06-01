@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { signIn, getUser } from '../../actions/index';
+import { signIn, getUser, getWilks } from '../../actions/index';
 
 import './Signin.css';
 
@@ -36,6 +36,7 @@ class Signin extends React.Component {
 			.then((response) => response.json())
 			.then((user) => {
 				this.props.getUser(user);
+				this.props.getWilks(this.props.wilksData);
 		});
 	};
 
@@ -98,5 +99,8 @@ class Signin extends React.Component {
 	}
 }
 
+const mapStateToProps = state => {
+	return { wilksData: Object.values(state.wilksData) }
+}
 
-export default connect(null, { signIn, getUser })(Signin);
+export default connect(mapStateToProps, { signIn, getUser, getWilks })(Signin);
