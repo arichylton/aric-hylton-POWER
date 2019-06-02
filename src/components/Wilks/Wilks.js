@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { getWilks } from '../../actions/index';
+import { getWilks, deleteWilks } from '../../actions/index';
 import './Wilks.css';
 
 class Wilks extends React.Component {
@@ -14,11 +14,12 @@ class Wilks extends React.Component {
 			wilks: 0,
 			gender: '',
 			type: 'lbs',
-			wilksData: []
+			wilksList: []
 		};
 	}
 
 	componentDidMount() {
+		this.setState({ wilksList: this.props.user.wilks });
 	}
 
 	calcWilks = () => {
@@ -88,6 +89,7 @@ class Wilks extends React.Component {
 			.then((response) => response.json())
 			.then((data) => {
 				this.props.getWilks(data);
+				this.setState({ wilksList: data });
 			})
 			.catch((err) => console.log(err));
 	};
@@ -198,54 +200,47 @@ class Wilks extends React.Component {
 	}
 
 	renderWilksDataList() {
-
-		if (!this.props.wilksData[0]) {
-			return this.props.user.wilks.map((wilks) => {
-				return (
-					<div className="list-group-item" key={wilks.date}>
-						<h3>
-						{' '}
-						<span style={{ color: '#228B22' }}>{Number(wilks.total).toFixed(0)}</span>
-						{wilks.type} total @<span style={{ color: '#FF6347' }}>
-							{Number(wilks.weight).toFixed(1)}
-						</span>
-						{wilks.type} bodyweight = <span style={{ color: '#1E90FF' }}>{wilks.wilks}</span>
-					</h3>
-					</div>
-				);
-			});
-		} else {
-			return this.props.wilksData.map((wilks) => {
-				return (
-					<div className="list-group-item" key={wilks.date}>
-						<h3>
-						{' '}
-						<span style={{ color: '#228B22' }}>{Number(wilks.total).toFixed(0)}</span>
-						{wilks.type} total @<span style={{ color: '#FF6347' }}>
-							{Number(wilks.weight).toFixed(1)}
-						</span>
-						{wilks.type} bodyweight = <span style={{ color: '#1E90FF' }}>{wilks.wilks}</span>
-					</h3>
-					</div>
-				);
-			});
-		}
-		
-	}
-
-	renderWilksData() {
-		const { name, wilks } = this.props.user;
-		
-
-		if (this.props.user.wilks) {
+		return this.state.wilksList.map((wilks) => {
 			return (
-				<div className="wilks-data">
-					<h1>{this.props.user.name}'s Data</h1>
-					<div className="list-group list-group-flush">
-						{this.renderWilksDataList()}
-					</div>
+				<div className="list-group-item wilks-item" key={wilks.date}>
+					<h3>
+						Bodyweight: <span style={{ color: 'lightgreen' }}>{Number(wilks.weight).toFixed(1)}</span>
+						{wilks.type}
+					</h3>
+					<h3>
+						Total: <span style={{ color: 'orange' }}>{Number(wilks.total).toFixed(0)}</span>
+						{wilks.type} 
+					</h3>
+					
+					<h3>
+						Wilks: <span style={{ color: 'lightblue' }}>{wilks.wilks}</span>
+					</h3>
+					<button onClick={() => this.onClickDeleteScore(wilks.id)} className="btn btn-danger grow">
+						Delete
+					</button>
 				</div>
 			);
+		});
+	}
+
+	onClickDeleteScore = (id) => {
+		this.setState({ wilksList: this.state.wilksList.filter((el) => el.id !== id) });
+		fetch(`http://localhost:3000/score/${id}`, {
+			method: 'delete',
+			headers: { 'Content-Type': 'application/json' }
+		});
+	};
+
+	renderWilksData() {
+		if (this.props.user.name) {
+			return (
+				<div className="wilks-data container">
+					<h1>{this.props.user.name}'s scores</h1>
+					<div className="list-group">{this.renderWilksDataList()}</div>
+				</div>
+			);
+		} else {
+			return null;
 		}
 	}
 
@@ -403,4 +398,4 @@ const mapStateToProps = (state) => {
 	return { user: state.user, wilksData: Object.values(state.wilksData) };
 };
 
-export default connect(mapStateToProps, { getWilks })(Wilks);
+export default connect(mapStateToProps, { getWilks, deleteWilks })(Wilks);

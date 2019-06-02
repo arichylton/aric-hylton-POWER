@@ -42,6 +42,26 @@
 	border-radius: 10px;
 }
 
+.wilks-item {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	color: white;
+	
+	background-image: linear-gradient(to right, rgb(45, 49, 68), rgba(60, 48, 126, 0.905));
+}
+
+.wilks-item > h3 {
+	padding-left: 7%;
+	width: 35%;
+	font-size: 150%;
+	letter-spacing: 1px;
+}
+
+.list-group {
+	border-radius: 40px;
+}
+
 @media only screen and (max-width: 1023px) {
 	.display-3 {
 		font-size: 400%;
@@ -61,6 +81,14 @@
 }
 
 @media only screen and (max-width: 480px) {
+	.wilks-item {
+		display: flex;
+		flex-direction: column;
+	}
+	.wilks-item > h3 {
+		width: 50%;
+		margin-bottom: 20px;
+	}
 	.display-3 {
 		font-size: 250%;
 		margin: 40px 0;
