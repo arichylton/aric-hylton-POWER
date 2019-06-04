@@ -58,6 +58,8 @@
 	letter-spacing: 1px;
 }
 
+
+
 .list-group {
 	border-radius: 40px;
 }
@@ -99,8 +101,16 @@
 	.wilks-calc {
 		display: flex;
 		flex-direction: column;
+		padding-bottom: 10%;
+		padding-top: 5%;
 	}
 	.wilks-section {
 		padding-top: 90px;
+	}
+	.wilks-item > h3 {
+		padding-left: 0%;
+	}
+	.scores-header {
+		padding-top: 15%;
 	}
 }

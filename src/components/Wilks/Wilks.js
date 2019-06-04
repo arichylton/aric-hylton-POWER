@@ -234,8 +234,8 @@ class Wilks extends React.Component {
 	renderWilksData() {
 		if (this.props.user.name) {
 			return (
-				<div className="wilks-data container">
-					<h1>{this.props.user.name}'s scores</h1>
+				<div className="wilks-data container mt-3">
+					<h1 className="scores-header">{this.props.user.name}'s scores</h1>
 					<div className="list-group">{this.renderWilksDataList()}</div>
 				</div>
 			);

@@ -5,6 +5,7 @@ import Home from './Home/Home';
 import Header from './Header/Header';
 import Wilks from './Wilks/Wilks';
 import Signin from './Signin/Signin'
+import Goals from './Goals/Goals'
 import './App.css';
 
 class App extends React.Component {
@@ -17,6 +18,7 @@ class App extends React.Component {
 						<Route path="/" exact component={Home} />
 						<Route path="/wilks" exact component={Wilks} />
 						<Route path="/signin" exact component={Signin} />
+						<Route path="/goals" exact component={Goals} />
 					</Switch>
 				</div>
 			</Router>

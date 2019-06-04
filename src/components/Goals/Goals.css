@@ -1,0 +1,12 @@
+.goals {
+	height: 60vh;
+	background-image: linear-gradient(to bottom, rgb(168, 168, 168), rgba(207, 207, 207, 0.905));
+	color: rgb(66, 66, 66);
+	display: flex;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
