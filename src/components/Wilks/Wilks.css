@@ -58,7 +58,19 @@
 	letter-spacing: 1px;
 }
 
+.scores-header {
+	text-transform: uppercase;
+}
 
+.scores-header:after {
+	display: block;
+    height: 2px;
+    background-image: linear-gradient(to bottom, rgb(45, 49, 68), rgba(60, 48, 126, 0.905));
+    content: "";
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 30px;
+}
 
 .list-group {
 	border-radius: 40px;

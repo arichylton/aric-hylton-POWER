@@ -14,9 +14,9 @@ class Header extends React.Component {
 					<Link to="/signin" className="navbar-brand">
 						<span className="v-mid m-4">Sign-In</span>
 					</Link>
-					<a className="navbar-brand" href="/#">
+					<Link className="navbar-brand" to='/register'>
 						<span className="v-mid">Register</span>
-					</a>
+					</Link>
 				</div>
 			);
 		} else {

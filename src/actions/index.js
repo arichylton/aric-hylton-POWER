@@ -4,6 +4,10 @@ export const signIn = () => {
 	};
 };
 
+export const register = () => {
+	return { type: 'REGISTER' };
+};
+
 export const signOut = () => {
 	return {
 		type: 'SIGN_OUT'

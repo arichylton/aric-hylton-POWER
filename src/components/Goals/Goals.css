@@ -10,3 +10,15 @@
     justify-content: space-evenly;
     align-items: center;
 }
+
+.goal-buttons {
+	display: flex;
+}
+
+.goalsList-weight-item {
+	background-image: linear-gradient(to right, rgb(100, 100, 100), rgba(139, 139, 139, 0.905));
+}
+
+.goalsList-wilks-item {
+	background-image: linear-gradient(to right, rgba(139, 139, 139, 0.905), rgb(100, 100, 100));
+}

@@ -16,6 +16,7 @@ class Goals extends React.Component {
 			wilks: 0,
 			startDate: new Date(),
 			type: '',
+			value: 'lbs',
 			goalsList: []
 		};
 	}
@@ -27,32 +28,72 @@ class Goals extends React.Component {
 	handleChange = (date) => this.setState({ startDate: date });
 
 	onSubmitModal = () => {
-		fetch('http://localhost:3000/goals', {
-			method: 'post',
-			headers: { 'Content-Type': 'application/json' },
-			body: JSON.stringify({
-				weight: this.state.weight,
-				wilks: this.state.wilks,
-				type: this.state.type,
-				date: this.state.startDate,
-				id: this.props.user.id
+		if (this.state.wilks === 0 && this.state.weight === 0) {
+			return alert('Please put in a correct number!');
+		} else {
+			fetch('http://localhost:3000/goals', {
+				method: 'post',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify({
+					weight: this.state.weight,
+					wilks: this.state.wilks,
+					type: this.state.type,
+					value: this.state.value,
+					date: this.state.startDate,
+					id: this.props.user.id
+				})
 			})
-		})
-			.then((response) => response.json())
-			.then((data) => {
-				this.setState({ goalsList: data });
-			})
-			.catch((err) => console.log(err));
+				.then((response) => response.json())
+				.then((data) => {
+					this.setState({ goalsList: data });
+				})
+				.catch((err) => console.log(err));
+		}
 	};
 
-	renderGoalsList() {
-		console.log(this.state.goalsList);
-		if (!this.props.isSignedIn) {
-			return <div>Hey, please Sign-In or Register to see or create new goals!</div>;
-		} else {
-			return <div>{moment(this.state.startDate.toUTCString()).format('ll').toString()}</div>;
-		}
+	renderGoalsWeightList() {
+		return this.state.goalsList.filter((goal) => goal.type === 'weight').map((goal, index) => {
+			{
+				return (
+					<div key={index} className="list-group-item wilks-item goalsList-weight-item">
+						<h3>
+							Goal Type: <span style={{ color: 'lightgreen' }}>{goal.type}</span>
+						</h3>{' '}
+						<h3>{goal.weight} {goal.value}</h3>
+						<h3>by {moment(goal.date).format('ll').toString()}</h3>
+						<button onClick={() => this.onClickDeleteScore(goal.id)} className="btn btn-danger grow">
+							Delete
+						</button>
+					</div>
+				);
+			}
+		});
 	}
+
+	renderWilksGoalsList() {
+		return this.state.goalsList.filter((goal) => goal.type === 'wilks').map((goal, index) => {
+			return (
+				<div key={index} className="list-group-item wilks-item goalsList-wilks-item">
+					<h3>
+						Goal Type: <span style={{ color: 'lightgreen' }}>{goal.type}</span>
+					</h3>{' '}
+					<h3>{goal.wilks} {goal.value}</h3>
+					<h3>by {moment(goal.date).format('ll').toString()}</h3>
+					<button onClick={() => this.onClickDeleteScore(goal.id)} className="btn btn-danger grow">
+						Delete
+					</button>
+				</div>
+			);
+		});
+	}
+
+	onClickDeleteScore = (id) => {
+		this.setState({ goalsList: this.state.goalsList.filter((el) => el.id !== id) });
+		fetch(`http://localhost:3000/goals/${id}`, {
+			method: 'delete',
+			headers: { 'Content-Type': 'application/json' }
+		});
+	};
 
 	renderModalWilks() {
 		return (
@@ -60,15 +101,34 @@ class Goals extends React.Component {
 				<form>
 					<div className="form-group">
 						<label htmlFor="wilks">Wilks</label>
-						<input
-							autoComplete="off"
-							type="number"
-							className="form-control"
-							id="wilks"
-							aria-describedby="wilksHelp"
-							placeholder="Enter Wilks"
-							onChange={(e) => this.setState({ wilks: e.target.value })}
-						/>
+						<div className="goal-buttons">
+							<input
+								autoComplete="off"
+								type="number"
+								className="form-control"
+								id="wilks"
+								aria-describedby="wilksHelp"
+								placeholder="Enter Wilks"
+								onChange={(e) => this.setState({ wilks: e.target.value })}
+							/>
+							<div className="btn-group" role="group" aria-label="Basic example">
+								<button
+									type="button"
+									className={`btn ${this.state.value === 'lbs' ? 'btn-info' : 'btn-secondary'}`}
+									onClick={() => this.setState({ value: 'lbs' })}
+								>
+									lbs
+								</button>
+								<button
+									type="button"
+									className={`btn ${this.state.value === 'kgs' ? 'btn-info' : 'btn-secondary'}`}
+									onClick={() => this.setState({ value: 'kgs' })}
+								>
+									kgs
+								</button>
+							</div>
+						</div>
+
 						<small id="wilksHelp" className="form-text text-muted">
 							Your wilks is safe with us
 						</small>
@@ -88,15 +148,34 @@ class Goals extends React.Component {
 				<form>
 					<div className="form-group">
 						<label htmlFor="weight">Weight</label>
-						<input
-							autoComplete="off"
-							type="number"
-							className="form-control"
-							id="weight"
-							aria-describedby="weightHelp"
-							placeholder="Enter Weight"
-							onChange={(e) => this.setState({ weight: e.target.value })}
-						/>
+						<div className="goal-buttons">
+							<input
+								autoComplete="off"
+								type="number"
+								className="form-control"
+								id="weight"
+								aria-describedby="weightHelp"
+								placeholder="Enter desired bodyweight"
+								onChange={(e) => this.setState({ weight: e.target.value })}
+							/>
+							<div className="btn-group" role="group" aria-label="Basic example">
+								<button
+									type="button"
+									className={`btn ${this.state.value === 'lbs' ? 'btn-info' : 'btn-secondary'}`}
+									onClick={() => this.setState({ value: 'lbs' })}
+								>
+									lbs
+								</button>
+								<button
+									type="button"
+									className={`btn ${this.state.value === 'kgs' ? 'btn-info' : 'btn-secondary'}`}
+									onClick={() => this.setState({ value: 'kgs' })}
+								>
+									kgs
+								</button>
+							</div>
+						</div>
+
 						<small id="weightHelp" className="form-text text-muted">
 							Weight is just saved up energy
 						</small>
@@ -121,7 +200,7 @@ class Goals extends React.Component {
 						data-target="#wilks"
 						onClick={() => this.setState({ type: 'wilks' })}
 					>
-						Create a new Wilks Goal
+						Create Wilks Goal
 					</button>
 					<button
 						type="button"
@@ -130,7 +209,7 @@ class Goals extends React.Component {
 						data-target="#weight"
 						onClick={() => this.setState({ type: 'weight' })}
 					>
-						Create a new Weight Goal
+						Create Bodyweight Goal
 					</button>
 				</div>
 
@@ -221,19 +300,48 @@ class Goals extends React.Component {
 		);
 	}
 
+	renderGoalsData() {
+		if (this.props.user.name && this.state.goalsList !== 0) {
+			return (
+				<div className="wilks-data container mt-3">
+					<h1 className="scores-header">{this.props.user.name}'s goals</h1>
+					<div className="list-group">
+						<h3 className="m-4">Wilks</h3>
+						{this.renderWilksGoalsList()}
+					</div>
+					<div className="list-group  mt-3">
+						<h3 className="m-4">Bodyweight</h3>
+						{this.renderGoalsWeightList()}
+					</div>
+					
+				</div>
+			);
+		} else {
+			return null;
+		}
+	}
+
 	render() {
 		if (!this.props.isSignedIn) {
 			return (
 				<div>
 					{this.renderGoalsJumbo()}
-					{this.renderGoalsList()}
+					<div className="m-4">Hey! Please Sign-In or Register to create or see goals.</div>
+				</div>
+			);
+		} else if (this.state.goalsList.length === 0) {
+			return (
+				<div>
+					{this.renderGoalsJumbo()}
+					<div className="m-4">Create a new goal!</div>
+					{this.renderModals()}
 				</div>
 			);
 		} else {
 			return (
 				<div>
 					{this.renderGoalsJumbo()}
-					{this.renderGoalsList()}
+					<div className="m-4">{this.renderGoalsData()}</div>
 					{this.renderModals()}
 				</div>
 			);
