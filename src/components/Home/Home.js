@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import './Home.css';
 import workout from '../../pics/workout.png';
@@ -13,30 +14,43 @@ class Home extends React.Component {
 	renderItemsList() {
 		return (
 			<div className="container listGrid">
-				<div className="list-col grow">
-					<span>Plan</span>
-					<img src={workout} alt="" width="300px" height="auto" />
-				</div>
-				<div className="list-col grow">
-					<span>Diet</span>
-					<img src={food} alt="" width="300px" height="auto" />
-				</div>
-				<div className="list-col grow">
-					<span>Progress</span>
-					<img src={sword} alt="" width="300px" height="auto" />
-				</div>
-				<div className="list-col grow">
-					<span>Stretching</span>
-					<img src={stretching} alt="" width="300px" height="auto" />
-				</div>
-				<div className="list-col grow">
-					<span>Meditation</span>
-					<img src={meditation} alt="" width="300px" height="auto" />
-				</div>
-				<div className="list-col grow">
-					<span>Partners</span>
-					<img src={friend} alt="" width="300px" height="auto" />
-				</div>
+				<Link to="/plan">
+					<div className="list-col grow">
+						<span className="link black hover-bg-light-blue">Plan</span>
+						<img src={workout} alt="" width="300px" height="auto" />
+					</div>
+				</Link>
+				<Link to="/plan">
+					<div className="list-col grow">
+						<span className="link black hover-bg-light-blue">Diet</span>
+						<img src={food} alt="" width="300px" height="auto" />
+					</div>
+				</Link>
+				<Link to="/plan">
+					<div className="list-col grow">
+						<span className="link black hover-bg-light-blue">Progress</span>
+						<img src={sword} alt="" width="300px" height="auto" />
+					</div>
+				</Link>
+				<Link to="/plan">
+					<div className="list-col grow">
+						<span className="link black hover-bg-light-blue">Stretching</span>
+						<img src={stretching} alt="" width="300px" height="auto" />
+					</div>
+				</Link>
+				<Link to="/plan">
+					<div className="list-col grow">
+						<span className="link black hover-bg-light-blue">Meditation</span>
+						<img src={meditation} alt="" width="300px" height="auto" />
+					</div>
+				</Link>
+
+				<Link to="/plan">
+					<div className="list-col grow">
+						<span className="link black hover-bg-light-blue">Partners</span>
+						<img src={friend} alt="" width="300px" height="auto" />
+					</div>
+				</Link>
 			</div>
 		);
 	}
@@ -54,11 +68,9 @@ class Home extends React.Component {
 
 	renderTips() {
 		if (this.props.user.name) {
-			return (
-				<h2>{this.props.user.name}'s Tips</h2>
-			)		
+			return <h2>{this.props.user.name}'s Tips</h2>;
 		} else {
-			return <h2>Tips</h2>
+			return <h2>Tips</h2>;
 		}
 	}
 
@@ -66,9 +78,7 @@ class Home extends React.Component {
 		return (
 			<div>
 				{this.renderCover()}
-				<div className="centered">
-					{this.renderTips()}
-				</div>
+				<div className="centered">{this.renderTips()}</div>
 
 				{this.renderItemsList()}
 			</div>
@@ -76,8 +86,8 @@ class Home extends React.Component {
 	}
 }
 
-const mapStateToProps = state => {
-	return { user: state.user, }
-}
+const mapStateToProps = (state) => {
+	return { user: state.user };
+};
 
 export default connect(mapStateToProps)(Home);

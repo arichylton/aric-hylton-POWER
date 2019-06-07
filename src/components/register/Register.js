@@ -40,6 +40,9 @@ class Register extends React.Component {
 			.then((response) => response.json())
 			.then((user) => {
 				this.props.getUser(user);
+				if (!user.email) {
+					alert('Incorrect credentials. Please try again');
+				}
 		})
 		.catch(err => console.log(err));
 	};

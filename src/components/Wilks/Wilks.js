@@ -88,7 +88,6 @@ class Wilks extends React.Component {
 		})
 			.then((response) => response.json())
 			.then((data) => {
-				this.props.getWilks(data);
 				this.setState({ wilksList: data });
 			})
 			.catch((err) => console.log(err));
@@ -96,7 +95,7 @@ class Wilks extends React.Component {
 
 	onSubmitGetWilksAndCalcWilks = async () => {
 		await this.calcWilks();
-		if (this.props.user.id && this.state.gender !== '') {
+		if (this.props.user.email && this.state.gender !== '') {
 			this.onSubmitGetWilks();
 		}
 	};

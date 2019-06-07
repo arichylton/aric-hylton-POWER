@@ -7,6 +7,7 @@ import Wilks from './Wilks/Wilks';
 import Signin from './Signin/Signin'
 import Register from './register/Register';
 import Goals from './Goals/Goals'
+import Plan from './Plan/Plan';
 import './App.css';
 
 class App extends React.Component {
@@ -19,6 +20,7 @@ class App extends React.Component {
 						<Route path="/" exact component={Home} />
 						<Route path="/wilks" exact component={Wilks} />
 						<Route path="/signin" exact component={Signin} />
+						<Route path="/plan" exact component={Plan} />
 						<Route path="/register" exact component={Register} />
 						<Route path="/goals" exact component={Goals} />
 					</Switch>
