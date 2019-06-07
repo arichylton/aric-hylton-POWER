@@ -75,7 +75,7 @@ class Wilks extends React.Component {
 	};
 
 	onSubmitGetWilks = () => {
-		fetch('http://localhost:3000/wilks', {
+		fetch('https://aric-hylton-power-api.herokuapp.com/wilks', {
 			method: 'post',
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify({
@@ -83,7 +83,7 @@ class Wilks extends React.Component {
 				total: this.state.total,
 				wilks: this.state.wilks,
 				type: this.state.type,
-				id: this.props.user.id
+				email: this.props.user.email
 			})
 		})
 			.then((response) => response.json())
@@ -200,7 +200,7 @@ class Wilks extends React.Component {
 	}
 
 	renderWilksDataList() {
-		return this.state.wilksList.map((wilks) => {
+		return this.state.wilksList.map((wilks, index) => {
 			return (
 				<div className="list-group-item wilks-item" key={wilks.date}>
 					<h3>
@@ -225,7 +225,7 @@ class Wilks extends React.Component {
 
 	onClickDeleteScore = (id) => {
 		this.setState({ wilksList: this.state.wilksList.filter((el) => el.id !== id) });
-		fetch(`http://localhost:3000/score/${id}`, {
+		fetch(`https://aric-hylton-power-api.herokuapp.com/score/${this.props.user.email}/${id}`, {
 			method: 'delete',
 			headers: { 'Content-Type': 'application/json' }
 		});

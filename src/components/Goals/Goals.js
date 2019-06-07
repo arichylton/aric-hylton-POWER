@@ -28,10 +28,11 @@ class Goals extends React.Component {
 	handleChange = (date) => this.setState({ startDate: date });
 
 	onSubmitModal = () => {
+		
 		if (this.state.wilks === 0 && this.state.weight === 0) {
 			return alert('Please put in a correct number!');
 		} else {
-			fetch('http://localhost:3000/goals', {
+			fetch('https://aric-hylton-power-api.herokuapp.com/goals', {
 				method: 'post',
 				headers: { 'Content-Type': 'application/json' },
 				body: JSON.stringify({
@@ -40,6 +41,7 @@ class Goals extends React.Component {
 					type: this.state.type,
 					value: this.state.value,
 					date: this.state.startDate,
+					email: this.props.user.email,
 					id: this.props.user.id
 				})
 			})
@@ -52,6 +54,7 @@ class Goals extends React.Component {
 	};
 
 	renderGoalsWeightList() {
+		console.log(this.state.goalsList)
 		return this.state.goalsList.filter((goal) => goal.type === 'weight').map((goal, index) => {
 			{
 				return (
@@ -89,7 +92,7 @@ class Goals extends React.Component {
 
 	onClickDeleteScore = (id) => {
 		this.setState({ goalsList: this.state.goalsList.filter((el) => el.id !== id) });
-		fetch(`http://localhost:3000/goals/${id}`, {
+		fetch(`https://aric-hylton-power-api.herokuapp.com/goals/${this.props.user.email}/${id}`, {
 			method: 'delete',
 			headers: { 'Content-Type': 'application/json' }
 		});

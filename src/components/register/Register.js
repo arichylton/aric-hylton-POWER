@@ -28,7 +28,7 @@ class Register extends React.Component {
 
 	onSubmitRegister = () => {
 		this.props.register();
-		fetch('http://localhost:3000/register', {
+		fetch('https://aric-hylton-power-api.herokuapp.com/register', {
 			method: 'post',
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify({
@@ -40,7 +40,8 @@ class Register extends React.Component {
 			.then((response) => response.json())
 			.then((user) => {
 				this.props.getUser(user);
-		});
+		})
+		.catch(err => console.log(err));
 	};
 
 	render() {

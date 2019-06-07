@@ -7,8 +7,9 @@ import './Header.css';
 import dumbell from '../../pics/dumbell.png';
 
 class Header extends React.Component {
+
 	renderIsSignedIn() {
-		if (!this.props.isSignedIn) {
+		if (!this.props.user.email) {
 			return (
 				<div>
 					<Link to="/signin" className="navbar-brand">
@@ -53,7 +54,7 @@ class Header extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-	return { isSignedIn: state.signin.isSignedIn };
+	return { isSignedIn: state.signin.isSignedIn, user: state.user };
 };
 
 export default connect(mapStateToProps, { signOut })(Header);
