@@ -28,7 +28,6 @@ class Goals extends React.Component {
 	handleChange = (date) => this.setState({ startDate: date });
 
 	onSubmitModal = () => {
-		
 		if (this.state.wilks === 0 && this.state.weight === 0) {
 			return alert('Please put in a correct number!');
 		} else {
@@ -54,22 +53,21 @@ class Goals extends React.Component {
 	};
 
 	renderGoalsWeightList() {
-		console.log(this.state.goalsList)
 		return this.state.goalsList.filter((goal) => goal.type === 'weight').map((goal, index) => {
-			{
-				return (
-					<div key={index} className="list-group-item wilks-item goalsList-weight-item">
-						<h3>
-							Goal Type: <span style={{ color: 'lightgreen' }}>{goal.type}</span>
-						</h3>{' '}
-						<h3>{goal.weight} {goal.value}</h3>
-						<h3>by {moment(goal.date).format('ll').toString()}</h3>
-						<button onClick={() => this.onClickDeleteScore(goal.id)} className="btn btn-danger grow">
-							Delete
-						</button>
-					</div>
-				);
-			}
+			return (
+				<div key={index} className="list-group-item wilks-item goalsList-weight-item">
+					<h3>
+						Goal Type: <span style={{ color: 'lightgreen' }}>{goal.type}</span>
+					</h3>{' '}
+					<h3>
+						{goal.weight} {goal.value}
+					</h3>
+					<h3>by {moment(goal.date).format('ll').toString()}</h3>
+					<button onClick={() => this.onClickDeleteScore(goal.id)} className="btn btn-danger grow">
+						Delete
+					</button>
+				</div>
+			);
 		});
 	}
 
@@ -80,7 +78,9 @@ class Goals extends React.Component {
 					<h3>
 						Goal Type: <span style={{ color: 'lightgreen' }}>{goal.type}</span>
 					</h3>{' '}
-					<h3>{goal.wilks} {goal.value}</h3>
+					<h3>
+						{goal.wilks} {goal.value}
+					</h3>
 					<h3>by {moment(goal.date).format('ll').toString()}</h3>
 					<button onClick={() => this.onClickDeleteScore(goal.id)} className="btn btn-danger grow">
 						Delete
@@ -316,7 +316,6 @@ class Goals extends React.Component {
 						<h3 className="m-4">Bodyweight</h3>
 						{this.renderGoalsWeightList()}
 					</div>
-					
 				</div>
 			);
 		} else {

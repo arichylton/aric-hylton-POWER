@@ -1,0 +1,28 @@
+.plan {
+    background-image: linear-gradient(to bottom right, rgba(33, 30, 68, 0.904), rgba(96, 218, 255, 0.932)), url(../../pics/workout.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+}
+
+.cards-list {
+    padding-top: 30px;
+}
+
+.card-img {
+    height: 100%;
+}
+
+.card {
+    margin: 6rem 0;
+}
+
+.col-md-8 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

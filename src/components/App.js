@@ -4,10 +4,11 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './Home/Home';
 import Header from './Header/Header';
 import Wilks from './Wilks/Wilks';
-import Signin from './Signin/Signin'
+import Signin from './Signin/Signin';
 import Register from './register/Register';
-import Goals from './Goals/Goals'
+import Goals from './Goals/Goals';
 import Plan from './Plan/Plan';
+import Diet from './Diet/Diet';
 import './App.css';
 
 class App extends React.Component {
@@ -21,6 +22,7 @@ class App extends React.Component {
 						<Route path="/wilks" exact component={Wilks} />
 						<Route path="/signin" exact component={Signin} />
 						<Route path="/plan" exact component={Plan} />
+						<Route path="/diet" exact component={Diet} />
 						<Route path="/register" exact component={Register} />
 						<Route path="/goals" exact component={Goals} />
 					</Switch>

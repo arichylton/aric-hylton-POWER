@@ -24,7 +24,7 @@ class Signin extends React.Component {
 	};
 
 	onSubmitSignIn = () => {
-		this.props.signIn();
+		
 		fetch('https://aric-hylton-power-api.herokuapp.com/signin', {
 			method: 'post',
 			headers: { 'Content-Type': 'application/json' },
@@ -35,8 +35,14 @@ class Signin extends React.Component {
 		})
 			.then((response) => response.json())
 			.then((user) => {
-				this.props.getUser(user);
-				this.props.getWilks(this.props.wilksData);
+				
+				if (!user.email) {
+					alert('Incorrect credentials. Please try again');
+				} else {
+					this.props.signIn();
+					this.props.getUser(user);
+					this.props.getWilks(this.props.wilksData);
+				}
 		});
 	};
 
@@ -86,9 +92,9 @@ class Signin extends React.Component {
 									</Link>
 								</div>
 								<div className="lh-copy mt3">
-									<p href="#0" className="f6 link dim black db pointer white">
+									<Link to='/register' className="f6 link dim black db pointer white">
 										Register
-									</p>
+									</Link>
 								</div>
 							</div>
 						</div>

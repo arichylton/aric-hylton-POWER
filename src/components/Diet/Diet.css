@@ -1,0 +1,52 @@
+.diet {
+	background-image: linear-gradient(to bottom right, rgba(33, 30, 68, 0.904), rgba(96, 218, 255, 0.932)),
+		url(../../pics/food.png);
+	background-repeat: no-repeat;
+	background-position: center;
+    background-attachment: fixed;
+    
+    height: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.jumbotron {
+	display: flex;
+	align-items: center;
+    height: 50vh;
+    
+    color: white;
+}
+
+
+.grid-diet {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(390px, 1fr));
+    justify-content: center;
+}
+
+.grid-diet-item {
+    height: auto;
+    width: 100%;
+    opacity: 1;
+    align-self: stretch;
+    transition: all .4s;
+}
+
+.grid-diet-item:hover {
+    opacity: .7;
+    transform: scale(.95);
+}
+
+.diet-card {
+    display: flex;
+    justify-content: center;
+    margin: 6rem 0;
+}
+
+.card-title {
+    margin: 25px 0 40px 0;
+}

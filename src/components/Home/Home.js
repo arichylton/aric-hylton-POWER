@@ -20,7 +20,7 @@ class Home extends React.Component {
 						<img src={workout} alt="" width="300px" height="auto" />
 					</div>
 				</Link>
-				<Link to="/plan">
+				<Link to="/diet">
 					<div className="list-col grow">
 						<span className="link black hover-bg-light-blue">Diet</span>
 						<img src={food} alt="" width="300px" height="auto" />
