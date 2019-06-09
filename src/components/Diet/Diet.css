@@ -16,21 +16,27 @@
 .jumbotron {
 	display: flex;
 	align-items: center;
-    height: 50vh;
     
     color: white;
 }
 
+.jumbotron-diet {
+    height: 66vh;
+}
+
+.diet-text {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+}
 
 .grid-diet {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(390px, 1fr));
-    justify-content: center;
+    justify-content: stretch;
 }
 
 .grid-diet-item {
     height: auto;
-    width: 100%;
     opacity: 1;
     align-self: stretch;
     transition: all .4s;
@@ -48,5 +54,13 @@
 }
 
 .card-title {
-    margin: 25px 0 40px 0;
+    margin: 50px 0 60px 0;
+    font-size: 150%;
+}
+
+
+@media only screen and (max-width: 480px) {
+    .grid-diet {
+        grid-template-columns: repeat(auto-fill, minmax(375px, 1fr));
+    }
 }
