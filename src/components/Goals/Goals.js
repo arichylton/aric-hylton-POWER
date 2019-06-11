@@ -22,6 +22,7 @@ class Goals extends React.Component {
 	}
 
 	componentDidMount() {
+		window.scrollTo(0, 0);
 		this.setState({ goalsList: this.props.user.goalsList });
 	}
 

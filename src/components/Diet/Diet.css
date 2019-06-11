@@ -13,15 +13,13 @@
     align-items: center;
 }
 
-.jumbotron {
-	display: flex;
+.jumbotron-diet {
+    height: 66vh;
+
+    display: flex;
 	align-items: center;
     
     color: white;
-}
-
-.jumbotron-diet {
-    height: 66vh;
 }
 
 .diet-text {

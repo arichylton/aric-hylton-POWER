@@ -11,6 +11,10 @@ import friend from '../../pics/friend.png';
 import food from '../../pics/food.png';
 
 class Home extends React.Component {
+	componentDidMount() {
+		window.scrollTo(0, 0)
+	  }
+	
 	renderItemsList() {
 		return (
 			<div className="container listGrid">
@@ -26,7 +30,7 @@ class Home extends React.Component {
 						<img src={food} alt="" width="300px" height="auto" />
 					</div>
 				</Link>
-				<Link to="/plan">
+				<Link to="/progress">
 					<div className="list-col grow">
 						<span className="link black hover-bg-light-blue">Progress</span>
 						<img src={sword} alt="" width="300px" height="auto" />

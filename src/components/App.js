@@ -8,6 +8,7 @@ import Signin from './Signin/Signin';
 import Register from './register/Register';
 import Goals from './Goals/Goals';
 import Plan from './Plan/Plan';
+import Progress from './Progress/Progress';
 import Diet from './Diet/Diet';
 import './App.css';
 
@@ -23,6 +24,7 @@ class App extends React.Component {
 						<Route path="/signin" exact component={Signin} />
 						<Route path="/plan" exact component={Plan} />
 						<Route path="/diet" exact component={Diet} />
+						<Route path="/progress" exact component={Progress} />
 						<Route path="/register" exact component={Register} />
 						<Route path="/goals" exact component={Goals} />
 					</Switch>

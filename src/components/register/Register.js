@@ -14,6 +14,8 @@ class Register extends React.Component {
 		};
 	}
 
+
+
 	onNameChange = (event) => {
 		this.setState({ name: event.target.value });
 	};
@@ -43,8 +45,8 @@ class Register extends React.Component {
 				if (!user.email) {
 					alert('Incorrect credentials. Please try again');
 				}
-		})
-		.catch(err => console.log(err));
+			})
+			.catch((err) => console.log(err));
 	};
 
 	render() {
@@ -113,8 +115,8 @@ class Register extends React.Component {
 	}
 }
 
-const mapStateToProps = state => {
-	return { wilksData: Object.values(state.wilksData) }
-}
+const mapStateToProps = (state) => {
+	return { wilksData: Object.values(state.wilksData) };
+};
 
 export default connect(mapStateToProps, { getUser, getWilks, register })(Register);
