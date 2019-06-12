@@ -79,9 +79,7 @@ class Goals extends React.Component {
 					<h3>
 						Goal Type: <span style={{ color: 'lightgreen' }}>{goal.type}</span>
 					</h3>{' '}
-					<h3>
-						{goal.wilks} {goal.value}
-					</h3>
+					<h3>{goal.wilks}</h3>
 					<h3>by {moment(goal.date).format('ll').toString()}</h3>
 					<button onClick={() => this.onClickDeleteScore(goal.id)} className="btn btn-danger grow">
 						Delete
@@ -115,22 +113,6 @@ class Goals extends React.Component {
 								placeholder="Enter Wilks"
 								onChange={(e) => this.setState({ wilks: e.target.value })}
 							/>
-							<div className="btn-group" role="group" aria-label="Basic example">
-								<button
-									type="button"
-									className={`btn ${this.state.value === 'lbs' ? 'btn-info' : 'btn-secondary'}`}
-									onClick={() => this.setState({ value: 'lbs' })}
-								>
-									lbs
-								</button>
-								<button
-									type="button"
-									className={`btn ${this.state.value === 'kgs' ? 'btn-info' : 'btn-secondary'}`}
-									onClick={() => this.setState({ value: 'kgs' })}
-								>
-									kgs
-								</button>
-							</div>
 						</div>
 
 						<small id="wilksHelp" className="form-text text-muted">

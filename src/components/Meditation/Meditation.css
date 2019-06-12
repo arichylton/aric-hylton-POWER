@@ -1,0 +1,34 @@
+.meditation-body {
+	background-image: linear-gradient(to bottom right, rgba(33, 30, 68, 0.904), rgba(96, 218, 255, 0.932)),
+		url(../../pics/meditation.png);
+	background-repeat: no-repeat;
+	background-position: center;
+    background-attachment: fixed;
+    
+    height: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.jumbotron-meditation {
+    height: 63vh;
+
+    display: flex;
+	align-items: center;
+    
+    color: white;
+}
+
+.rain-meditation {
+    height: 50vh;
+ color: white;
+}
+
+.meditation-img {
+    height: 50vh;
+    width: auto;
+    background-repeat: repeat-x;
+}

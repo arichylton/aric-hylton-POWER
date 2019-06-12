@@ -36,20 +36,20 @@ class Home extends React.Component {
 						<img src={sword} alt="" width="300px" height="auto" />
 					</div>
 				</Link>
-				<Link to="/plan">
+				<Link to="/stretching">
 					<div className="list-col grow">
 						<span className="link black hover-bg-light-blue">Stretching</span>
 						<img src={stretching} alt="" width="300px" height="auto" />
 					</div>
 				</Link>
-				<Link to="/plan">
+				<Link to="/meditation">
 					<div className="list-col grow">
 						<span className="link black hover-bg-light-blue">Meditation</span>
 						<img src={meditation} alt="" width="300px" height="auto" />
 					</div>
 				</Link>
 
-				<Link to="/plan">
+				<Link to="/partners">
 					<div className="list-col grow">
 						<span className="link black hover-bg-light-blue">Partners</span>
 						<img src={friend} alt="" width="300px" height="auto" />

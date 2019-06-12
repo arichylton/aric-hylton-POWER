@@ -2,7 +2,6 @@ import React from 'react';
 
 import './Diet.css';
 
-import food from '../../pics/food.png';
 import nuts from '../../pics/nuts.jpg';
 import fruits from '../../pics/fruits.jpg';
 import bread from '../../pics/bread.jpg';
@@ -19,9 +18,7 @@ class Diet extends React.Component {
 				<div className="jumbotron jumbotron-diet bg-transparent jumbotron-fluid">
 					<div className="container">
 						<h1 className="display-4">Diet</h1>
-						<p className="lead">
-							Discipline will triumph
-						</p>
+						<p className="lead">Discipline will triumph</p>
 					</div>
 				</div>
 
@@ -194,6 +191,7 @@ class Diet extends React.Component {
 											<a
 												href="https://www.healthline.com/nutrition/micronutrients"
 												target="_blank"
+												rel="noopener noreferrer"
 											>
 												Micronutrients: Types, Functions, Benefits and More
 											</a>
@@ -206,6 +204,7 @@ class Diet extends React.Component {
 											<a
 												href="https://aaptiv.com/magazine/macronutrients-the-basics"
 												target="_blank"
+												rel="noopener noreferrer"
 											>
 												Macronutrients 101: Understanding the Basics
 											</a>

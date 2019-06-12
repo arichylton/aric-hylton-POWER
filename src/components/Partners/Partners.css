@@ -1,0 +1,45 @@
+.partners-body {
+	background-image: linear-gradient(to bottom right, rgba(33, 30, 68, 0.904), rgba(96, 218, 255, 0.932)),
+		url(../../pics/friend.png);
+	background-repeat: no-repeat;
+	background-position: center;
+    background-attachment: fixed;
+    
+    height: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.jumbotron-partners {
+    height: 63vh;
+
+    display: flex;
+	align-items: center;
+    
+    color: white;
+}
+
+.partners-img {
+    height: 50vh;
+    width: auto;
+    background-repeat: repeat-x;
+}
+
+.dot1 {
+    height: 100px;
+    width: 100px;
+    background-color: rgba(18, 14, 66, 0.849);
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  .dot2 {
+    height: 100px;
+    width: 100px;
+    background-color: rgba(2, 194, 241, 0.849);
+    border-radius: 50%;
+    display: inline-block;
+  }

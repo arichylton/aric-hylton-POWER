@@ -37,7 +37,7 @@
     height: auto;
     opacity: 1;
     align-self: stretch;
-    transition: all .4s;
+    transition: all .2s;
 }
 
 .grid-diet-item:hover {

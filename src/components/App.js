@@ -9,7 +9,10 @@ import Register from './register/Register';
 import Goals from './Goals/Goals';
 import Plan from './Plan/Plan';
 import Progress from './Progress/Progress';
+import Stretching from './Stretching/Stretching';
+import Partners from './Partners/Partners';
 import Diet from './Diet/Diet';
+import Meditation from './Meditation/Meditation';
 import './App.css';
 
 class App extends React.Component {
@@ -25,6 +28,9 @@ class App extends React.Component {
 						<Route path="/plan" exact component={Plan} />
 						<Route path="/diet" exact component={Diet} />
 						<Route path="/progress" exact component={Progress} />
+						<Route path="/stretching" exact component={Stretching} />
+						<Route path="/meditation" exact component={Meditation} />
+						<Route path="/partners" exact component={Partners} />
 						<Route path="/register" exact component={Register} />
 						<Route path="/goals" exact component={Goals} />
 					</Switch>
