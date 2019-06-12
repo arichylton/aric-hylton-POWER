@@ -13,6 +13,7 @@ import Stretching from './Stretching/Stretching';
 import Partners from './Partners/Partners';
 import Diet from './Diet/Diet';
 import Meditation from './Meditation/Meditation';
+import Footer from './Footer/Footer';
 import './App.css';
 
 class App extends React.Component {
@@ -20,20 +21,28 @@ class App extends React.Component {
 		return (
 			<Router>
 				<div className="tc">
-					<Header />
-					<Switch>
-						<Route path="/" exact component={Home} />
-						<Route path="/wilks" exact component={Wilks} />
-						<Route path="/signin" exact component={Signin} />
-						<Route path="/plan" exact component={Plan} />
-						<Route path="/diet" exact component={Diet} />
-						<Route path="/progress" exact component={Progress} />
-						<Route path="/stretching" exact component={Stretching} />
-						<Route path="/meditation" exact component={Meditation} />
-						<Route path="/partners" exact component={Partners} />
-						<Route path="/register" exact component={Register} />
-						<Route path="/goals" exact component={Goals} />
-					</Switch>
+					<div className="main-body">
+						<div className='upper'>
+							<Header />
+							<Switch>
+								<Route path="/" exact component={Home} />
+								<Route path="/wilks" exact component={Wilks} />
+								<Route path="/signin" exact component={Signin} />
+								<Route path="/plan" exact component={Plan} />
+								<Route path="/diet" exact component={Diet} />
+								<Route path="/progress" exact component={Progress} />
+								<Route path="/stretching" exact component={Stretching} />
+								<Route path="/meditation" exact component={Meditation} />
+								<Route path="/partners" exact component={Partners} />
+								<Route path="/register" exact component={Register} />
+								<Route path="/goals" exact component={Goals} />
+							</Switch>
+						</div>
+
+						<div>
+							<Footer />
+						</div>
+					</div>
 				</div>
 			</Router>
 		);

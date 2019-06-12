@@ -7,6 +7,9 @@ import './Header.css';
 import dumbell from '../../pics/dumbell.png';
 
 class Header extends React.Component {
+	componentDidMount() {
+		window.scrollTo(0, 0);
+	}
 
 	renderIsSignedIn() {
 		if (!this.props.user.email) {

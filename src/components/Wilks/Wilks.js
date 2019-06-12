@@ -19,7 +19,8 @@ class Wilks extends React.Component {
 	}
 
 	componentDidMount() {
-		this.setState({ wilksList: this.props.user.wilks });
+		window.scrollTo(0, 0);
+		this.setState({ wilksList: this.props.user.wilks });	
 	}
 
 	calcWilks = () => {
