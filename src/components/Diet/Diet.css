@@ -28,13 +28,12 @@
 }
 
 .grid-diet {
+    width: 99.1vw;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(390px, 1fr));
-    justify-content: stretch;
 }
 
 .grid-diet-item {
-    height: auto;
     opacity: 1;
     align-self: stretch;
     transition: all .2s;
@@ -59,6 +58,6 @@
 
 @media only screen and (max-width: 480px) {
     .grid-diet {
-        grid-template-columns: repeat(auto-fill, minmax(375px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(370px, 1fr));
     }
 }

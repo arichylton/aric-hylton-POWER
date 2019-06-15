@@ -3,43 +3,55 @@
 		url(../../pics/friend.png);
 	background-repeat: no-repeat;
 	background-position: center;
-    background-attachment: fixed;
-    
-    height: 100%;
-    
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+	background-attachment: fixed;
+
+	height: 100%;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 .jumbotron-partners {
-    height: 63vh;
+	height: 63vh;
 
-    display: flex;
+	display: flex;
 	align-items: center;
-    
-    color: white;
+
+	color: white;
 }
 
 .partners-img {
-    height: 50vh;
-    width: auto;
-    background-repeat: repeat-x;
+	height: 50vh;
+	width: auto;
+	background-repeat: repeat-x;
 }
 
 .dot1 {
-    height: 100px;
-    width: 100px;
-    background-color: rgba(18, 14, 66, 0.849);
-    border-radius: 50%;
-    display: inline-block;
-  }
+	height: 100px;
+	width: 100px;
+	background-color: rgba(18, 14, 66, 0.849);
+	border-radius: 50%;
+	display: inline-block;
+}
 
-  .dot2 {
-    height: 100px;
-    width: 100px;
-    background-color: rgba(2, 194, 241, 0.849);
-    border-radius: 50%;
-    display: inline-block;
-  }
+.dot2 {
+	height: 100px;
+	width: 100px;
+	background-color: rgba(2, 194, 241, 0.849);
+	border-radius: 50%;
+	display: inline-block;
+}
+
+@media only screen and (max-width: 480px) {
+	.dot1 {
+		height: 50px;
+		width: 50px;
+	}
+
+	.dot2 {
+		height: 50px;
+		width: 50px;
+	}
+}

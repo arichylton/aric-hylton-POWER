@@ -20,38 +20,38 @@ class Home extends React.Component {
 			<div className="container listGrid">
 				<Link to="/plan">
 					<div className="list-col grow">
-						<span className="link black hover-bg-light-blue">Plan</span>
+						<span className="link black">Plan</span>
 						<img src={workout} alt="" width="300px" height="auto" />
 					</div>
 				</Link>
 				<Link to="/diet">
 					<div className="list-col grow">
-						<span className="link black hover-bg-light-blue">Diet</span>
+						<span className="link black">Diet</span>
 						<img src={food} alt="" width="300px" height="auto" />
 					</div>
 				</Link>
 				<Link to="/progress">
 					<div className="list-col grow">
-						<span className="link black hover-bg-light-blue">Progress</span>
+						<span className="link black">Progress</span>
 						<img src={sword} alt="" width="300px" height="auto" />
 					</div>
 				</Link>
 				<Link to="/stretching">
 					<div className="list-col grow">
-						<span className="link black hover-bg-light-blue">Stretching</span>
+						<span className="link black">Stretching</span>
 						<img src={stretching} alt="" width="300px" height="auto" />
 					</div>
 				</Link>
 				<Link to="/meditation">
 					<div className="list-col grow">
-						<span className="link black hover-bg-light-blue">Meditation</span>
+						<span className="link black">Meditation</span>
 						<img src={meditation} alt="" width="300px" height="auto" />
 					</div>
 				</Link>
 
 				<Link to="/partners">
 					<div className="list-col grow">
-						<span className="link black hover-bg-light-blue">Partners</span>
+						<span className="link black">Partners</span>
 						<img src={friend} alt="" width="300px" height="auto" />
 					</div>
 				</Link>

@@ -278,7 +278,7 @@ class Goals extends React.Component {
 			<div className="jumbotron jumbotron-fluid goals">
 				<div className="container centered">
 					<h1 className="display-4 animated fadeIn">Goals</h1>
-					<p className="lead" style={{ fontWeight: 400 }}>
+					<p className="lead animated slideInUp" style={{ fontWeight: 400 }}>
 						Steady progress comes internally.
 					</p>
 				</div>
@@ -311,7 +311,7 @@ class Goals extends React.Component {
 			return (
 				<div>
 					{this.renderGoalsJumbo()}
-					<div className="m-4">Hey! Please Sign-In or Register to create or see goals.</div>
+					<div className="upper animated slideInDown">Hey! Please Sign-In or Register to create or see goals.</div>
 				</div>
 			);
 		} else if (this.state.goalsList.length === 0) {
@@ -324,7 +324,7 @@ class Goals extends React.Component {
 			);
 		} else {
 			return (
-				<div>
+				<div className='mb-4'>
 					{this.renderGoalsJumbo()}
 					<div className="m-4">{this.renderGoalsData()}</div>
 					{this.renderModals()}

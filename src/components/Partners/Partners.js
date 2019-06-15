@@ -9,8 +9,8 @@ const Partners = () => {
 		<div className="partners-body">
 			<div className="jumbotron jumbotron-partners bg-transparent jumbotron-fluid">
 				<div className="container">
-					<h1 className="display-4">Partners</h1>
-					<p className="lead">Home is whenever I'm with you</p>
+					<h1 className="display-4 animated slideInLeft">Partners</h1>
+					<p className="lead animated slideInRight">Home is whenever I'm with you</p>
 				</div>
 			</div>
 			<div onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
@@ -19,7 +19,7 @@ const Partners = () => {
 			</div>
 
 			<div
-				className="diet-card text-black bg-white br3 ba b--black-10 w-100 w-50-m w-25-l shadow-5 center"
+				className="diet-card text-black bg-white br3 ba b--black-10 w-100 w-50-m w-25-l shadow-5 center animated slideInUp"
 				style={{ maxWidth: '65vw' }}
 			>
 				<div className="col-md-8">

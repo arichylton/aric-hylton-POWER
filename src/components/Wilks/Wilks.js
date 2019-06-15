@@ -106,7 +106,7 @@ class Wilks extends React.Component {
 			<div className="jumbotron jumbotron-fluid wilks">
 				<div className="container centered">
 					<h1 className="display-4 animated fadeIn">Wilks</h1>
-					<p className="lead" style={{ fontWeight: 400 }}>
+					<p className="lead animated slideInUp" style={{ fontWeight: 400 }}>
 						The Wilks Formula is a coefficient that can be used to measure the strength of a powerlifter
 						against other powerlifters despite the different weights of the lifters.
 					</p>

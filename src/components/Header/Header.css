@@ -1,6 +1,34 @@
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: rgb(236, 236, 236);
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+
 .header-background {
+    display: flex;
+    justify-content: center;
     background-color: rgba(47, 51, 71, 0.966);
     box-shadow: 0 1px 2px rgb(42, 45, 63);
+}
+
+.navbar {
+    width: 100vw;
+    padding: .5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.ghost-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1180px;
+}
+
+.hamburger {
+    display: none;
 }
 
 a > span {
@@ -18,13 +46,54 @@ a > img {
     margin-right: 10px;
 }
 
-.nav-container {
-    margin: 0 auto;
-    max-width: 1800px;
+.hamburger {
+	border-radius: 0;
+	border: none;
+	min-height: 80px;
 }
 
-.navbar {
-    padding: .5% 3%;
+.hamburger li {
+	display: inline;
+	color: white;
 }
 
+.hamburger .navbar-nav > li > a {
+	color: #ffffff;
+	font-family: Lato;
+	font-size: 1.7em;
+	font-weight: 300;
+}
+
+.hamburger .navbar-nav li a:hover {
+    transition: 0.2s all linear;
+    color: rgba(255, 183, 75, 0.966);
+	height: 100%;
+}
+
+.navbar-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hamburger-icon {
+    margin-top: 30px;
+}
+
+@media only screen and (max-width: 767px) {
+	.hamburger {
+        display: block;     
+    }
+
+    .hamburger > .navbar-header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .ghost {
+        display: none;
+    }
+
+   
+}
 

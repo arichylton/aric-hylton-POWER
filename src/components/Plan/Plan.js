@@ -18,9 +18,9 @@ class Plan extends React.Component {
 		return (
 			<div className="plan">
 				<div className="cards-list">
-					<h2 className="text-white">Plans</h2>
+					<h2 className="text-white animated slideInUp">Plans</h2>
 					<div
-						className="card text-white bg-transparent br3 ba b--black-10 w-100 w-50-m w-25-l mw6 shadow-5 center"
+						className="card text-white bg-transparent br3 ba b--black-10 w-100 w-50-m w-25-l mw6 shadow-5 center animated slideInUp"
 						style={{ maxWidth: '65vw' }}
 					>
 						<div className="row no-gutters">
@@ -39,7 +39,7 @@ class Plan extends React.Component {
 						</div>
 					</div>
 					<div
-						className="card text-white bg-transparent br3 ba b--black-10 w-100 w-50-m w-25-l mw6 shadow-5 center"
+						className="card text-white bg-transparent br3 ba b--black-10 w-100 w-50-m w-25-l mw6 shadow-5 center animated slideInUp"
 						style={{ maxWidth: '65vw' }}
 					>
 						<div className="row no-gutters">
@@ -59,7 +59,7 @@ class Plan extends React.Component {
 						</div>
 					</div>
 					<div
-						className="card text-white bg-transparent br3 ba b--black-10 w-100 w-50-m w-25-l mw6 shadow-5 center"
+						className="card text-white bg-transparent br3 ba b--black-10 w-100 w-50-m w-25-l mw6 shadow-5 center animated slideInUp"
 						style={{ maxWidth: '65vw' }}
 					>
 						<div className="row no-gutters">
@@ -79,7 +79,7 @@ class Plan extends React.Component {
 						</div>
 					</div>
 					<div
-						className="card text-white bg-transparent br3 ba b--black-10 w-100 w-50-m w-25-l mw6 shadow-5 center"
+						className="card text-white bg-transparent br3 ba b--black-10 w-100 w-50-m w-25-l mw6 shadow-5 center animated slideInUp"
 						style={{ maxWidth: '65vw' }}
 					>
 						<div className="row no-gutters">
@@ -99,7 +99,7 @@ class Plan extends React.Component {
 						</div>
 					</div>
 					<div
-						className="card text-white bg-transparent br3 ba b--black-10 w-100 w-50-m w-25-l mw6 shadow-5"
+						className="card text-white bg-transparent br3 ba b--black-10 w-100 w-50-m w-25-l mw6 shadow-5 animated slideInUp"
 						style={{ maxWidth: '65vw' }}
 					>
 						<div className="row no-gutters">
@@ -119,7 +119,7 @@ class Plan extends React.Component {
 						</div>
 					</div>
 					<div
-						className="card text-white bg-transparent br3 ba b--black-10 w-100 w-50-m w-25-l mw6 shadow-5 center"
+						className="card text-white bg-transparent br3 ba b--black-10 w-100 w-50-m w-25-l mw6 shadow-5 center animated slideInUp"
 						style={{ maxWidth: '65vw' }}
 					>
 						<div className="row no-gutters">

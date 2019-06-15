@@ -10,13 +10,13 @@ const Footer = () => {
 		<footer className='centered'>
 			<div className="centered">
 				<h4
-					style={{ wordSpacing: 2, letterSpacing: 1, fontSize: '100%' }}
+					style={{ wordSpacing: 2, letterSpacing: 1, fontSize: '100%', marginBottom: 0 }}
 					className="grow"
 					onMouseEnter={toggleHover}
 					onMouseLeave={toggleHover}
 				>
 					{' '}
-					Made with <ion-icon name="heart" style={hovered ? { color: 'red' } : { color: 'black' }} /> by Aric
+					Made with <ion-icon name="heart" style={hovered ? { color: 'lightblue' } : { color: 'red' }} /> by Aric
 					Hylton &copy; 2019
 				</h4>
 			</div>

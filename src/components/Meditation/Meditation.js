@@ -43,7 +43,7 @@ class Meditation extends React.Component {
 
 								<h4 className="underline">Benefits</h4>
 
-								<p className="lh-copy">
+								
 									<ul>
                                         <li>Reduces Stress</li>
                                         <li>Controls Anxiety</li>
@@ -57,7 +57,7 @@ class Meditation extends React.Component {
                                         <li>Helps Control Pain</li>
                                         <li>Can Decrease Blood Pressure</li>
                                     </ul>
-								</p>
+								
 
 								<h4 className="underline">Summary</h4>
 								<p className="lh-copy">

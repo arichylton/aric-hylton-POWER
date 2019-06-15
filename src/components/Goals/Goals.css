@@ -22,3 +22,8 @@
 .goalsList-wilks-item {
 	background-image: linear-gradient(to right, rgba(139, 139, 139, 0.905), rgb(100, 100, 100));
 }
+
+.upper {
+	margin-bottom: 20vh;
+	margin-top: 60px;
+}

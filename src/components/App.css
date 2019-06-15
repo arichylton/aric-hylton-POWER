@@ -3,10 +3,8 @@ body {
     padding: 0;
 }
 
-.main-body{
+.main-body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 93.1vw;
 }
-

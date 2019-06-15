@@ -1,14 +1,15 @@
 footer {
     width:100%;
-    height:60px;   /* Height of the footer */
-    background:rgb(255, 255, 255);
+    height:150px;   /* Height of the footer */
+    background:rgb(24, 24, 24);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
  }
 
-.heart ion-icon {
-    color: rgba(255, 0, 0, 0.815);
-    margin: -3px 5px;
-    vertical-align: center;
-}
-.heart ion-icon:hover {
-    color: #000;
-}
+ footer > div {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ }
