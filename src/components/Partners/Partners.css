@@ -1,4 +1,10 @@
 .partners-body {
+	background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(33, 30, 68, 0.904)), to(rgba(96, 218, 255, 0.932))),
+		url(../../pics/friend.png);
+	background-image: -webkit-linear-gradient(top left, rgba(33, 30, 68, 0.904), rgba(96, 218, 255, 0.932)),
+		url(../../pics/friend.png);
+	background-image: -o-linear-gradient(top left, rgba(33, 30, 68, 0.904), rgba(96, 218, 255, 0.932)),
+		url(../../pics/friend.png);
 	background-image: linear-gradient(to bottom right, rgba(33, 30, 68, 0.904), rgba(96, 218, 255, 0.932)),
 		url(../../pics/friend.png);
 	background-repeat: no-repeat;
@@ -7,17 +13,34 @@
 
 	height: 100%;
 
+	display: -webkit-box;
+
+	display: -ms-flexbox;
+
 	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
 }
 
 .jumbotron-partners {
 	height: 63vh;
 
+	display: -webkit-box;
+
+	display: -ms-flexbox;
+
 	display: flex;
-	align-items: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
 
 	color: white;
 }

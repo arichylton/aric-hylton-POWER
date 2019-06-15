@@ -1,4 +1,10 @@
 .diet {
+	background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(33, 30, 68, 0.904)), to(rgba(96, 218, 255, 0.932))),
+		url(../../pics/food.png);
+	background-image: -webkit-linear-gradient(top left, rgba(33, 30, 68, 0.904), rgba(96, 218, 255, 0.932)),
+		url(../../pics/food.png);
+	background-image: -o-linear-gradient(top left, rgba(33, 30, 68, 0.904), rgba(96, 218, 255, 0.932)),
+		url(../../pics/food.png);
 	background-image: linear-gradient(to bottom right, rgba(33, 30, 68, 0.904), rgba(96, 218, 255, 0.932)),
 		url(../../pics/food.png);
 	background-repeat: no-repeat;
@@ -7,17 +13,34 @@
     
     height: 100%;
     
+    display: -webkit-box;
+    
+    display: -ms-flexbox;
+    
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 .jumbotron-diet {
     height: 66vh;
 
+    display: -webkit-box;
+
+    display: -ms-flexbox;
+
     display: flex;
-	align-items: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
     
     color: white;
 }
@@ -29,24 +52,35 @@
 
 .grid-diet {
     width: 99.1vw;
+    display: -ms-grid;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(390px, 1fr));
 }
 
 .grid-diet-item {
     opacity: 1;
-    align-self: stretch;
+    -ms-flex-item-align: stretch;
+        -ms-grid-row-align: stretch;
+        align-self: stretch;
+    -webkit-transition: all .2s;
+    -o-transition: all .2s;
     transition: all .2s;
 }
 
 .grid-diet-item:hover {
     opacity: .7;
-    transform: scale(.95);
+    -webkit-transform: scale(.95);
+        -ms-transform: scale(.95);
+            transform: scale(.95);
 }
 
 .diet-card {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     margin: 6rem 0;
 }
 

@@ -1,25 +1,44 @@
 .goals {
 	height: 60vh;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(168, 168, 168)), to(rgba(207, 207, 207, 0.905)));
+	background-image: -webkit-linear-gradient(top, rgb(168, 168, 168), rgba(207, 207, 207, 0.905));
+	background-image: -o-linear-gradient(top, rgb(168, 168, 168), rgba(207, 207, 207, 0.905));
 	background-image: linear-gradient(to bottom, rgb(168, 168, 168), rgba(207, 207, 207, 0.905));
 	color: rgb(66, 66, 66);
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
 }
 
 .modal-buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 .goal-buttons {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
 }
 
 .goalsList-weight-item {
+	background-image: -webkit-gradient(linear, left top, right top, from(rgb(100, 100, 100)), to(rgba(139, 139, 139, 0.905)));
+	background-image: -webkit-linear-gradient(left, rgb(100, 100, 100), rgba(139, 139, 139, 0.905));
+	background-image: -o-linear-gradient(left, rgb(100, 100, 100), rgba(139, 139, 139, 0.905));
 	background-image: linear-gradient(to right, rgb(100, 100, 100), rgba(139, 139, 139, 0.905));
 }
 
 .goalsList-wilks-item {
+	background-image: -webkit-gradient(linear, left top, right top, from(rgba(139, 139, 139, 0.905)), to(rgb(100, 100, 100)));
+	background-image: -webkit-linear-gradient(left, rgba(139, 139, 139, 0.905), rgb(100, 100, 100));
+	background-image: -o-linear-gradient(left, rgba(139, 139, 139, 0.905), rgb(100, 100, 100));
 	background-image: linear-gradient(to right, rgba(139, 139, 139, 0.905), rgb(100, 100, 100));
 }
 

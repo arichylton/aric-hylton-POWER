@@ -1,7 +1,16 @@
 .signin {
     height: 100vh;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(45, 49, 68)), to(rgba(60, 48, 126, 0.905)));
+    background-image: -webkit-linear-gradient(top, rgb(45, 49, 68), rgba(60, 48, 126, 0.905));
+    background-image: -o-linear-gradient(top, rgb(45, 49, 68), rgba(60, 48, 126, 0.905));
     background-image: linear-gradient(to bottom, rgb(45, 49, 68), rgba(60, 48, 126, 0.905));
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }

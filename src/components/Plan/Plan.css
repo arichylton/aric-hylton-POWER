@@ -1,12 +1,21 @@
 .plan {
+    background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(33, 30, 68, 0.904)), to(rgba(96, 218, 255, 0.932))), url(../../pics/workout.png);
+    background-image: -webkit-linear-gradient(top left, rgba(33, 30, 68, 0.904), rgba(96, 218, 255, 0.932)), url(../../pics/workout.png);
+    background-image: -o-linear-gradient(top left, rgba(33, 30, 68, 0.904), rgba(96, 218, 255, 0.932)), url(../../pics/workout.png);
     background-image: linear-gradient(to bottom right, rgba(33, 30, 68, 0.904), rgba(96, 218, 255, 0.932)), url(../../pics/workout.png);
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
     height: 100%;
 
+    display: -webkit-box;
+
+    display: -ms-flexbox;
+
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 
 .cards-list {
@@ -22,8 +31,14 @@
 }
 
 .col-md-8 {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     padding-bottom: 30px;
 }

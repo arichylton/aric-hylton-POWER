@@ -3,14 +3,21 @@
     height: 5px;
     background-color: rgb(236, 236, 236);
     margin: 6px 0;
+    -webkit-transition: 0.4s;
+    -o-transition: 0.4s;
     transition: 0.4s;
   }
 
 .header-background {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     background-color: rgba(47, 51, 71, 0.966);
-    box-shadow: 0 1px 2px rgb(42, 45, 63);
+    -webkit-box-shadow: 0 1px 2px rgb(42, 45, 63);
+            box-shadow: 0 1px 2px rgb(42, 45, 63);
 }
 
 .header-nav {
@@ -19,14 +26,24 @@
 
 .navbar {
     padding: .5rem 1rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
 }
 
 .ghost-header {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     max-width: 1180px;
 }
 
@@ -38,6 +55,8 @@ a > span {
     color: white;
     letter-spacing: 1px;
     padding-bottom: 10px;
+    -webkit-transition: color .2s;
+    -o-transition: color .2s;
     transition: color .2s;
 }
 
@@ -50,27 +69,42 @@ a > img {
 }
 
 .navbar-header {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 
 
 @media only screen and (max-width: 575px) {
 	.navbar {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
         padding: .4rem 2rem;
     }
 
     .hamburger > .navbar-header {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: center;
-        align-items: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
     }
     .ghost {
         display: none;
     }
 }
-
