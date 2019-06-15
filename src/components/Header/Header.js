@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import { signOut } from '../../actions/index';
+import SmallHeader from './SmallHeader';
 import './Header.css';
-import dumbell from '../../pics/dumbell.png';
 
 class Header extends React.Component {
 	componentDidMount() {
@@ -35,42 +35,11 @@ class Header extends React.Component {
 	render() {
 		return (
 			<div className="header-background fixed-top">
-				<nav className="navbar navbar-light nav-container">
+				<nav className="navbar navbar-light header-nav ghost">
 					<div className="ghost-header">
-						<Link to="/" className="navbar-brand">
-							<img src={dumbell} width="30" height="30" className="align-center ghost" alt="" />
+						<Link to="/" className="navbar-brand">						
 							<span className="v-mid mr-4">POWER</span>
 						</Link>
-						<div className="hamburger">
-							<div class="navbar-header">
-								<div class="container navbar-toggle collapsed" onclick="myFunction(this)" data-toggle="collapse">
-									<div class="bar1" />
-									<div class="bar2" />
-									<div class="bar3" />
-								</div>
-							</div>
-
-							<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-								<ul class="nav navbar-nav">
-									<li>
-										<a href="index.php">Home</a>
-									</li>
-									<li>
-										<a href="about.php">About</a>
-									</li>
-									<li>
-										<a href="#portfolio">Portfolio</a>
-									</li>
-									<li>
-										<a href="#">Blog</a>
-									</li>
-									<li>
-										<a href="contact.php">Contact</a>
-									</li>
-								</ul>
-							</div>
-						</div>
-
 						<Link to="/wilks" className="navbar-brand ghost">
 							<span className="v-mid mr-4">Wilks</span>
 						</Link>
@@ -81,6 +50,8 @@ class Header extends React.Component {
 
 					{this.renderIsSignedIn()}
 				</nav>
+
+				<SmallHeader />
 			</div>
 		);
 	}

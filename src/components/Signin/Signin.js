@@ -54,8 +54,8 @@ class Signin extends React.Component {
 					<main className="pa4 black-80">
 						<div className="measure">
 							<fieldset id="sign_up" className="ba b--transparent ph0 mh0">
-								<legend className="f1 fw6 ph0 mh0 white">Sign In</legend>
-								<div className="mt3">
+								<legend className="f1 fw6 ph0 mh0 white animated fadeInDown">Sign In</legend>
+								<div className="mt3 animated fadeInUp">
 									<label className="db fw6 lh-copy f6 white" htmlFor="email-address">
 										Email
 									</label>
@@ -67,7 +67,7 @@ class Signin extends React.Component {
 										id="email-address"
 									/>
 								</div>
-								<div className="mv3">
+								<div className="mv3 animated fadeInUp">
 									<label className="db fw6 lh-copy f6 white" htmlFor="password">
 										Password
 									</label>
@@ -81,7 +81,7 @@ class Signin extends React.Component {
 								</div>
 							</fieldset>
 							<div>
-								<div className="">
+								<div className="animated fadeInUp">
 									<Link to="/">
 										<input
 											className="b ph3 pv2 input-reset ba b--white br1 bg-transparent grow pointer f6 dib white"
@@ -91,7 +91,7 @@ class Signin extends React.Component {
 										/>
 									</Link>
 								</div>
-								<div className="lh-copy mt3">
+								<div className="lh-copy mt3 animated fadeInUp">
 									<Link to='/register' className="f6 link dim black db pointer white">
 										Register
 									</Link>

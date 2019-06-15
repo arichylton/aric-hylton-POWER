@@ -178,7 +178,7 @@ class Goals extends React.Component {
 	renderModals() {
 		return (
 			<div>
-				<div className="modal-buttons container">
+				<div className="modal-buttons container upper">
 					<button
 						type="button"
 						className="btn btn-primary"

@@ -14,12 +14,12 @@ class Progress extends React.Component {
 			<div className="progress-body" style={{marginBottom: 0}}>
 				<div className="jumbotron jumbotron-progress bg-transparent jumbotron-fluid">
 					<div className="container">
-						<h1 className="display-4">Progress</h1>
-						<p className="lead">The longest yard</p>
+						<h1 className="display-4 animated slideInLeft">Progress</h1>
+						<p className="lead animated slideInRight">The longest yard</p>
 					</div>
 				</div>
 
-				<img src={powerlifting} alt='' className='progress-img'/>
+				<img src={powerlifting} alt='' className='progress-img animated zoomIn'/>
 
 						
 				<div

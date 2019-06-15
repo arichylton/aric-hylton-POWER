@@ -17,12 +17,12 @@ class Stretching extends React.Component {
 			<div className="stretching-body">
 				<div className="jumbotron jumbotron-stretching bg-transparent jumbotron-fluid">
 					<div className="container">
-						<h1 className="display-4">Stretching</h1>
-						<p className="lead">The underdog</p>
+						<h1 className="display-4 animated slideInDown">Stretching</h1>
+						<p className="lead animated slideInDown">The underdog</p>
 					</div>
 				</div>
 
-				<div className="grid-diet">
+				<div className="grid-diet animated slideInUp">
 					<img src={stretchingWoman} alt="" className="grid-diet-item" />
 					<img src={stretchingWomanSitting} alt="" className="grid-diet-item" />
 					<img src={stretchingMale} alt="" className="grid-diet-item" />

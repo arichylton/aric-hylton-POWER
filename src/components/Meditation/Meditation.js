@@ -15,14 +15,14 @@ class Meditation extends React.Component {
 			<div className="meditation-body">
 				<div className="jumbotron jumbotron-meditation bg-transparent jumbotron-fluid">
 					<div className="container">
-						<h1 className="display-4">Meditation</h1>
-						<p className="lead">The underdog</p>
+						<h1 className="display-4 animated slideInLeft">Meditation</h1>
+						<p className="lead animated slideInRight">The underdog</p>
 					</div>
 				</div>
 
-				<div className="ma4 mt0">
+				<div className="ma4 mt0 animated rollIn">
 					<Tilt className="Tilt br2 shadow-2" options={{ max: 55 }} style={{ height: 150, width: 150 }}>
-						<div className="Tilt-inner pa3">
+						<div className="Tilt-inner pa3 animated heartBeat infinite">
 							<img style={{ paddingTop: '25px' }} alt="logo" src={brain} />
 						</div>
 					</Tilt>

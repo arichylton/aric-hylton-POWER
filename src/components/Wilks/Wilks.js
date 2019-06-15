@@ -246,7 +246,7 @@ class Wilks extends React.Component {
 
 	renderWilksChart() {
 		return (
-			<div className="container table-responsive">
+			<div className="container table-responsive upper">
 				<table className="table table-dark graph-section table-hover">
 					<thead className="thead-light">
 						<tr>
@@ -385,7 +385,7 @@ class Wilks extends React.Component {
 				<div className="wilks-section">{this.renderWilksCalc()}</div>
 				<div>{this.renderWilksData()}</div>
 				<div className="wilks-chart">
-					<h1>Wilks Comparison Chart</h1>
+					<h1 style={{marginTop: 70}}>Wilks Comparison Chart</h1>
 					{this.renderWilksInformation()}
 					{this.renderWilksChart()}
 				</div>

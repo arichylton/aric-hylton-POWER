@@ -57,8 +57,8 @@ class Register extends React.Component {
 					<main className="pa4 black-80">
 						<div className="measure">
 							<fieldset id="sign_up" className="ba b--transparent ph0 mh0">
-								<legend className="f1 fw6 ph0 mh0 white">Register</legend>
-								<div className="mt3">
+								<legend className="f1 fw6 ph0 mh0 white animated fadeInDown">Register</legend>
+								<div className="mt3 animated fadeInUp">
 									<label className="db fw6 lh-copy f6 white" htmlFor="name">
 										Name
 									</label>
@@ -70,7 +70,7 @@ class Register extends React.Component {
 										id="name"
 									/>
 								</div>
-								<div className="mt3">
+								<div className="mt3 animated fadeInUp">
 									<label className="db fw6 lh-copy f6 white" htmlFor="email-address">
 										Email
 									</label>
@@ -82,7 +82,7 @@ class Register extends React.Component {
 										id="email-address"
 									/>
 								</div>
-								<div className="mv3">
+								<div className="mv3 animated fadeInUp">
 									<label className="db fw6 lh-copy f6 white" htmlFor="password">
 										Password
 									</label>
@@ -96,7 +96,7 @@ class Register extends React.Component {
 								</div>
 							</fieldset>
 							<div>
-								<div className="">
+								<div className="animated fadeInUp">
 									<Link to="/">
 										<input
 											className="b ph3 pv2 input-reset ba b--white br1 white bg-transparent grow pointer f6 dib"

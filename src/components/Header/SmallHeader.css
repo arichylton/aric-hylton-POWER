@@ -1,0 +1,36 @@
+.tc-white {
+    font-family: 'Muli', sans-serif;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: rgb(43, 43, 43);
+}
+
+.nav-container {
+    background-color: #5e2ca5;
+    width: 100%;
+    padding-bottom: .5px;
+}
+
+.tc-white a {
+    text-decoration: none;
+    color: white;
+}
+
+.big-ghost {
+    display: none;
+}
+
+@media only screen and (max-width: 575px) {
+	.navbar {
+        display: flex;
+        justify-content: center;
+        padding: .4rem 2rem;
+    }
+    .big-ghost {
+        display: block;
+    }
+
+	.ghost {
+		display: none;
+	}
+}

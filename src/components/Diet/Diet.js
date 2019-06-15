@@ -17,12 +17,12 @@ class Diet extends React.Component {
 			<div className="diet">
 				<div className="jumbotron jumbotron-diet bg-transparent jumbotron-fluid">
 					<div className="container">
-						<h1 className="display-4">Diet</h1>
-						<p className="lead">Discipline will triumph</p>
+						<h1 className="display-4 animated slideInDown">Diet</h1>
+						<p className="lead animated slideInDown">Discipline will triumph</p>
 					</div>
 				</div>
 
-				<div className="grid-diet">
+				<div className="grid-diet animated slideInUp">
 					<img src={bread} alt="" className="grid-diet-item" />
 					<img src={nuts} alt="" className="grid-diet-item" />
 					<img src={fruits} alt="" className="grid-diet-item" />
